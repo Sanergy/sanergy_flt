@@ -1,2 +1,2 @@
 # Odoo Module
-Simple CRUD application as I learn how to develop Apps on Odoo
+Simple CRUD application for learning how to develop Odoo apps
