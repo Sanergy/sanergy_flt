@@ -93,6 +93,8 @@ Documentation doesn't mention some additional python libraries needed
 
 The -i flag initializes Odoo core database files. You only need to start Odoo like this the first time only.
 
+The -d flag takes the name of the database you have created in this case the db is named odoo.
+
   `python3 odoo-bin -d odoo -i base` 
 
 For subsequent starts use
