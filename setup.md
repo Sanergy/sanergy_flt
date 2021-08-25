@@ -71,10 +71,6 @@ Save and exit your editor.
 
 ### Add-ons path
 
-add the addons path to .odoorc e.g
-
-  `addons_path = /mnt/c/odoo/addons`
-
 Find and edit odoo.conf and add the addons path
 
   `addons_path = /mnt/c/odoo/addons`
