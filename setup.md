@@ -91,9 +91,11 @@ Documentation doesn't mention some additional python libraries needed
 
 ## Start and initialize db odoo
 
+The -i flag initializes Odoo core database files. You only need to start Odoo like this the first time only.
+
   `python3 odoo-bin -d odoo -i base` 
 
-## Start with initialized db odoo
+For subsequent starts use
 
   `python3 odoo-bin -d odoo`
 
