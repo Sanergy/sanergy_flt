@@ -112,6 +112,9 @@ Activate developer mode under settings module
   `odoo-bin scaffold my_module add-ons/`
 
 This creates a module named my_module under the add_ons directory
+
+The module structure looks something like this
+```
   📦my_module
   ┣ 📂controllers
   ┃ ┣ 📜controllers.py
@@ -128,6 +131,7 @@ This creates a module named my_module under the add_ons directory
   ┃ ┗ 📜views.xml
   ┣ 📜__init__.py
   ┗ 📜__manifest__.py
+```
 
 In your favorite editor make changes as needed to module which will be found on your odoo installation path under the addons folder.
 
