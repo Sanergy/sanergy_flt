@@ -58,13 +58,17 @@ Documentation can be found [here](https://virtualenvwrapper.readthedocs.io/en/la
 
 Add lines below
 
-`[options]`
+```
+{
+  [options]
 
-`db_user=odoo`
+  db_user=odoo
 
-`dbfilter=odoo`
+  dbfilter=odoo
 
-`without_demo = False`
+  without_demo = False
+}
+```
 
 The without_demo = False tells Odoo to include demo data when you intizialize the database. Set this to True if you don't need demo data.
 
@@ -81,6 +85,24 @@ Find and edit odoo.conf and add the addons path
 Documentation doesn't mention some additional python libraries needed
 
 `pip3 install passlib pypdf2 pdfminer`
+
+### Install wkhtmltopdf
+
+wkhtmltopdf is a library to render HTML into PDF. Odoo uses it to create PDF reports. wkhtmltopdf is not installed through pip and must be installed manually.
+
+```
+{
+  sudo apt update -y
+
+  wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.focal_amd64.deb
+
+  sudo apt install ./wkhtmltox_0.12.6-1.focal_amd64.deb
+}
+```
+
+Verify that installation was successful
+
+`wkhtmltopdf --version`
 
 # Starting up
 

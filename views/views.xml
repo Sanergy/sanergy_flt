@@ -47,14 +47,13 @@
     <!-- menu categories -->
 
     <menuitem name="FLT" id="flt_menu_1" parent="flt_menu_root"/>
+
     <!--<menuitem name="FLT 2" id="flt_menu_2" parent="flt_menu_root"/>-->
 
     <!-- actions -->
 
-    <menuitem name="FLT List" id="flt_menu_1_list" parent="flt_menu_1"
-              action="flt_action_window"/>
-    <!--<menuitem name="Server to list" id="flt" parent="flt_menu_2"
-              action="flt_action_server"/>-->
+    <menuitem name="Open/Close" id="flt_menu_1_list" parent="flt_menu_1" action="flt_action_window"/>
+
 
   </data>
 </odoo>

@@ -26,6 +26,8 @@
         'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
+        'report/flt_report_templates.xml',
+        'report/flt_report_views.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
