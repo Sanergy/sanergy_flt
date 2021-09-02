@@ -5,6 +5,12 @@
                 <t t-call="web.basic_layout">
                     <t t-foreach="docs" t-as="o">
                         <h3 t-field="o.name"/>
+                        <div t-field="o.category_id"></div>
+                        <div t-field="o.route_id"></div>
+                        <div t-field="o.location"></div>
+                        <div t-field="o.date_opened"></div>
+                        <div t-field="o.date_closed"></div>
+                        <div t-field="o.status"></div>
                     </t>
                 </t>
             </t>

@@ -10,6 +10,7 @@
         </li>
       </ul>
     </template>
+
     <template id="object">
       <h1>
         <t t-esc="object.display_name"/>
@@ -25,7 +26,6 @@
         </t>
       </dl>
     </template>
-
 
   </data>
 </odoo>

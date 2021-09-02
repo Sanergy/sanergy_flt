@@ -171,4 +171,6 @@ Install your module.
 
 If the module is not listed under Apps, check the addons path is setup and search while having removed the 'Apps' filter
 
+## Module Upgrade
+
 ## Happy coding!
