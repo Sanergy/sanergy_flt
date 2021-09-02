@@ -153,20 +153,19 @@
 
     <menuitem name="Flt" id="flt_menu_1" parent="flt_menu_root" sequence="1"/>
     <menuitem name="Referrals" id="flt_menu_2" parent="flt_menu_root" sequence="2"/>
-    <menuitem name="Configuration" id="flt_menu_3" parent="flt_menu_root" sequence="4"/>
+    <menuitem name="Configuration" id="flt_menu_3" parent="flt_menu_root" sequence="5"/>
     <menuitem name="Collection" id="flt_menu_4" parent="flt_menu_root" sequence="3"/>
+    <menuitem name="Reporting" id="flt_menu_5" parent="flt_menu_root" sequence="4"/>
 
 
     <!-- actions -->
-
     <menuitem name="Open/Close" id="flt_menu_list" parent="flt_menu_1" action="flt_action_window"/>
 
     <menuitem name="Create" id="flt_refferal" parent="flt_menu_2" action="flt_action_window"/>
     <menuitem name="Commisions" id="flt_commission" parent="flt_menu_2" action="flt_action_window" />
 
-
-    <menuitem name="Categories" id="flt_cat" parent="flt_menu_3" action="flt_category_action_window"/>
-    <menuitem name="Routes" id="flt_route" parent="flt_menu_3" action="flt_route_action_window"/>
+    <menuitem name="FLT Category" id="flt_cat" parent="flt_menu_3" action="flt_category_action_window"/>
+    <menuitem name="Collection Route" id="flt_route" parent="flt_menu_3" action="flt_route_action_window"/>
 
 
   </data>
