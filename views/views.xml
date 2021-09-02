@@ -87,7 +87,7 @@
       <field name="name">sanergy.flt.kanban</field>
       <field name="model">sanergy.flt</field>
       <field name="arch" type="xml">
-        <kanban class="o_res_partner_kanban">
+        <kanban class="o_res_partner_kanban" default_group_by="route_id" store="True">
           <field name="id"/>
           <field name="name"/>
           <field name="category_id"/>
@@ -125,11 +125,23 @@
       </field>
     </record>
 
+    <record id="flt_view_calendar" model="ir.ui.view">
+      <field name="name">flt.calendar</field>
+      <field name="model">sanergy.flt</field>
+      <field name="arch" type="xml">
+        <calendar string="FLT Opening" date_start="date_opened" date_stop="date_closed" event_open_popup="true" mode="month" hide_time="true" quick_add="False">
+          <field name="name"/>
+          <field name="category_id"/>
+          <field name="route_id"/>
+        </calendar>
+      </field>
+    </record>
+
     <!-- actions opening views on models -->
     <record model="ir.actions.act_window" id="flt_action_window">
       <field name="name">FLT</field>
       <field name="res_model">sanergy.flt</field>
-      <field name="view_mode">kanban,tree,form</field>
+      <field name="view_mode">kanban,calendar,tree,form</field>
     </record>
 
     <!-- Top menu item -->
