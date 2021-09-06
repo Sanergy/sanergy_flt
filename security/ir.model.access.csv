@@ -1,2 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_sanergy_flt,access_sanergy_flt,sanergy_flt.model_sanergy_flt,base.group_user,1,1,1,1
+access_sanergy_flt_route,access_sanergy_flt_route,sanergy_flt.model_sanergy_flt_route,base.group_user,1,1,1,1

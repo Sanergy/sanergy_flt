@@ -17,9 +17,11 @@
     # for the full list
     'category': 'Technical',
     'version': '0.1',
-
+    #'images': [
+    #    'static/img/default_image.png',
+    #],
     # any module necessary for this one to work correctly
-    'depends': ['base','hr'],
+    'depends': ['base','hr','mail'],
 
     # always loaded
     'data': [
@@ -33,4 +35,7 @@
     'demo': [
         'demo/demo.xml',
     ],
+    'installable': True,
+    'application': True,
+    'auto_install': False,
 }

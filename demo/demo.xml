@@ -22,41 +22,40 @@
       <field name="name">Toilet 0</field>
       <field name="category_id">1</field>
       <field name="route_id">1</field>
-      <field name="date_opened">2021-01-03</field>
-      <field name="status">open</field>
+      <field name="date_opened">2021-09-03</field>
+      <field name="current_status">open</field>
     </record>
 
     <record id="2" model="sanergy.flt">
       <field name="name">Toilet 1</field>
       <field name="category_id">2</field>
       <field name="route_id">1</field>
-      <field name="date_opened">2021-02-01</field>
-      <field name="status">open</field>
+      <field name="date_opened">2021-09-01</field>
+      <field name="current_status">open</field>
     </record>
 
     <record id="3" model="sanergy.flt">
       <field name="name">Toilet 2</field>
       <field name="category_id">2</field>
       <field name="route_id">1</field>
-      <field name="date_opened">2021-03-01</field>
-      <field name="status">open</field>
+      <field name="date_opened">2021-09-03</field>
+      <field name="current_status">open</field>
     </record>
 
     <record id="4" model="sanergy.flt">
       <field name="name">Toilet 3</field>
       <field name="category_id">2</field>
       <field name="route_id">2</field>
-      <field name="date_opened">2021-03-03</field>
-      <field name="status">open</field>
+      <field name="date_opened">2021-09-02</field>
+      <field name="current_status">open</field>
     </record>
 
     <record id="5" model="sanergy.flt">
       <field name="name">Toilet 4</field>
       <field name="category_id">1</field>
       <field name="route_id">1</field>
-      <field name="date_opened">2021-01-03</field>
-      <field name="date_closed">2021-03-30</field>
-      <field name="status">closed</field>
+      <field name="date_opened">2021-08-01</field>
+      <field name="current_status">closed</field>
     </record>
 
   </data>
