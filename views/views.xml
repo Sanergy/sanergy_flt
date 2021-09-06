@@ -142,12 +142,15 @@
         </kanban>
       </field>
     </record>
-
+    <!--Form View-->
     <record id="flt_view_form" model="ir.ui.view">
       <field name="name">flt.view.form</field>
       <field name="model">sanergy.flt</field>
       <field name="arch" type="xml">
         <form string="Flt">
+          <header>
+            <button name="%(flt_status_wizard_action)d" string="Close FLT" type="action" class="oe_highlight"/>
+          </header>
           <sheet>
             <div class="oe_title">
               <h1>

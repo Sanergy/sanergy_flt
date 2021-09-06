@@ -56,16 +56,3 @@ class Flt(models.Model):
             'date_closed': None,
         })
 
-class FltStatus(models.Model):
-    _name = 'sanergy.flt.status'
-    _description = 'Fresh life toilet status'
-
-    flt_id = fields.Many2one('sanergy.flt', string='Toilet')
-    reason = fields.Char('Reason for closure')
-    date_closed = fields.Date('Date Closed')
-    closed_by = fields.Many2one('res.users', string='Responsible', index=True, required=True, default=lambda self: self.env.user)
-    closure_type = fields.Selection([('temporary', 'Temporary'), ('permanent', 'Permanent')], default='temporary')
-    status = fields.Selection([('open', 'Open'), ('closed', 'Closed')], default='open')
-
-
-

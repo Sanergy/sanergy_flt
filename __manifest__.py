@@ -26,6 +26,7 @@
     # always loaded
     'data': [
         'security/ir.model.access.csv',
+        'wizard/flt_status.xml',
         'views/views.xml',
         'views/templates.xml',
         'report/flt_report_templates.xml',
