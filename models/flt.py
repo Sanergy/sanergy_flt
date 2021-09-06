@@ -39,10 +39,21 @@ class Flt(models.Model):
     date_closed = fields.Date('Date Closed', readonly=True)
     current_status = fields.Selection([('open', 'Open'), ('closed', 'Closed')], default='open', tracking=True)
 
-    def action_close(self):
-        return self.write({
+    def action_close_flt(self):
+        if self.current_status != 'open':
+            return
+        self.write({
             'current_status': 'closed',
-            'date_closed': fields.Datetime.now(),
+            'date_closed': fields.Date.today(),
+        })
+
+    def action_reopen_flt(self):
+        if self.current_status != 'closed':
+            return
+        self.write({
+            'current_status': 'open',
+            'date_opened': fields.Date.today(),
+            'date_closed': None,
         })
 
 class FltStatus(models.Model):
