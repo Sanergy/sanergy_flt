@@ -41,7 +41,7 @@ class Flt(models.Model):
 
     def action_close_flt(self):
         if self.current_status != 'open':
-            return
+            raise UserError("You can not close an already closed FLT")
         self.write({
             'current_status': 'closed',
             'date_closed': fields.Date.today(),
@@ -49,7 +49,7 @@ class Flt(models.Model):
 
     def action_reopen_flt(self):
         if self.current_status != 'closed':
-            return
+            raise UserError("You can not open an open FLT")
         self.write({
             'current_status': 'open',
             'date_opened': fields.Date.today(),
