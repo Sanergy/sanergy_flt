@@ -25,6 +25,7 @@
 
     # always loaded
     'data': [
+        'security/flt_security.xml',
         'security/ir.model.access.csv',
         'wizard/update_status.xml',
         'views/views.xml',

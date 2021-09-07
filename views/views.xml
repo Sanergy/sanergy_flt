@@ -185,6 +185,8 @@
               </page>
               <page name="waste" string="Waste Collection">
               </page>
+              <page name="work" string="Maintenance">
+              </page>
             </notebook>
           </sheet>
           <div class="oe_chatter">
