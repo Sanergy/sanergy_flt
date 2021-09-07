@@ -1,3 +1,3 @@
 # -*- coding: utf-8 -*-
 
-from . import flt_status
+from . import update_status

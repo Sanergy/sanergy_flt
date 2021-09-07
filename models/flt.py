@@ -37,7 +37,8 @@ class Flt(models.Model):
     location = fields.Char('Location')
     date_opened = fields.Date('Date Opened')    
     date_closed = fields.Date('Date Closed', readonly=True)
-    current_status = fields.Selection([('open', 'Open'), ('closed', 'Closed')], default='open', tracking=True)
+    current_status = fields.Selection([('open', 'Open'), ('closed', 'Closed')], readonly=True, default='open', tracking=True)
+    status_lines = fields.One2many('sanergy.flt.status', 'flt_id', string='Status Lines', copy=True, auto_join=True)
 
     def action_close_flt(self):
         if self.current_status != 'open':
@@ -55,4 +56,24 @@ class Flt(models.Model):
             'date_opened': fields.Date.today(),
             'date_closed': None,
         })
+        #write to status table
+        vals = {
+                'flt_id': self.id,
+                'comment': None,
+                'updated_type': None,
+                'status': 'open',
+            }
+        self.env['sanergy.flt.status'].create(vals)
+
+    class FltStatus(models.Model):
+        _name = 'sanergy.flt.status'
+        _description = 'Fresh life toilet status'
+
+        flt_id = fields.Many2one(
+            'sanergy.flt', string='FLT', required=True,
+            default=lambda self: self.env.context.get('active_id', None),
+        )
+        updated_type = fields.Selection([('temporary', 'Temporary'), ('permanent', 'Permanent')], default='temporary')
+        status = fields.Selection([('open', 'Open'), ('closed', 'Closed')], default='closed')
+        comment = fields.Text('Comment')
 

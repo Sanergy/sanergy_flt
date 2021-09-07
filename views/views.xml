@@ -69,6 +69,7 @@
     </record>
 
     <!--Action to close FLT-->
+    <!--
     <record id="flt_close" model="ir.actions.server">
       <field name="name">Close FLT</field>
       <field name="model_id" ref="model_sanergy_flt"/>
@@ -77,7 +78,7 @@
       <field name="state">code</field>
       <field name="code">action = records.action_close_flt()</field>
     </record>
-
+    -->
     <record id="flt_reopen" model="ir.actions.server">
       <field name="name">Open FLT</field>
       <field name="model_id" ref="model_sanergy_flt"/>
@@ -149,7 +150,7 @@
       <field name="arch" type="xml">
         <form string="Flt">
           <header>
-            <button name="%(flt_status_wizard_action)d" string="Close FLT" type="action" class="oe_highlight"/>
+            <button name="%(flt_status_wizard_action)d" string="Close FLT" type="action" attrs="{'invisible': [('current_status', '=', 'closed')]}" class="oe_highlight"/>
           </header>
           <sheet>
             <div class="oe_title">
@@ -170,7 +171,21 @@
                 <field name="current_status"/>
               </group>
             </group>
-
+            <notebook>
+              <page name="status" string="Operational Status">
+                <field name="status_lines" mode="tree">
+                  <tree string="Status Lines" editable="bottom">
+                    <field name="status"/>
+                    <field name="updated_type"/>
+                    <field name="comment"/>
+                    <field name="create_date"/>
+                    <field name="create_uid"/>
+                  </tree>
+                </field>
+              </page>
+              <page name="waste" string="Waste Collection">
+              </page>
+            </notebook>
           </sheet>
           <div class="oe_chatter">
             <field name="message_follower_ids" widget="mail_followers"/>
