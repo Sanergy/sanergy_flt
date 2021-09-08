@@ -10,7 +10,7 @@
                         <div t-field="o.location"></div>
                         <div t-field="o.date_opened"></div>
                         <div t-field="o.date_closed"></div>
-                        <div t-field="o.status"></div>
+                        <div t-field="o.current_status"></div>
                     </t>
                 </t>
             </t>

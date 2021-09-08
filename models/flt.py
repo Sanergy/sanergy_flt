@@ -51,11 +51,6 @@ class Flt(models.Model):
     def action_reopen_flt(self):
         if self.current_status != 'closed':
             raise UserError("You can not open an open FLT")
-        self.write({
-            'current_status': 'open',
-            'date_opened': fields.Date.today(),
-            'date_closed': None,
-        })
         #write to status table
         vals = {
                 'flt_id': self.id,
@@ -64,6 +59,12 @@ class Flt(models.Model):
                 'status': 'open',
             }
         self.env['sanergy.flt.status'].create(vals)
+
+        self.write({
+            'current_status': 'open',
+            'date_opened': fields.Date.today(),
+            'date_closed': None,
+        })
 
     class FltStatus(models.Model):
         _name = 'sanergy.flt.status'

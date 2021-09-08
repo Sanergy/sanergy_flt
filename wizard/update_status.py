@@ -16,12 +16,6 @@ class UpdateStatus(models.TransientModel):
     reason = fields.Text('Reason for closure')
 
     def action_flt_close(self):
-        flt = self.env['sanergy.flt'].browse(self.env.context.get('active_id'))
-        flt.write({
-            'current_status': 'closed',
-            'date_closed': fields.Date.today(),
-        })
-
         vals = {
                 'flt_id': self.flt_id.id,
                 'comment': self.reason,
@@ -29,6 +23,12 @@ class UpdateStatus(models.TransientModel):
                 'status': 'closed',
             }
         self.env['sanergy.flt.status'].create(vals)
+
+        flt = self.env['sanergy.flt'].browse(self.env.context.get('active_id'))
+        flt.write({
+            'current_status': 'closed',
+            'date_closed': fields.Date.today(),
+        })
 
     
 

@@ -1,5 +1,21 @@
 <odoo>
   <data>
+    <!--Search Pane-->
+    <record id="view_flt_filter" model="ir.ui.view">
+      <field name="name">sanergy.flt.search</field>
+      <field name="model">sanergy.flt</field>
+      <field name="arch" type="xml">
+        <search string="Flt">
+          <filter string="Open" name="open" domain="[('current_status', '=', 'open')]"/>
+          <filter string="Closed" name="closed" domain="[('current_status', '=', 'closed')]"/>
+          <group expand="0" string="Group By">
+            <filter name="category" string="Category" domain="[]" context="{'group_by': 'category_id'}"/>
+            <filter name="route" string="Route" domain="[]" context="{'group_by': 'route_id'}"/>
+          </group>
+        </search>
+      </field>
+    </record>
+
     <!-- explicit list view definition -->
     <record model="ir.ui.view" id="flt_category_list">
       <field name="name">FLT Category</field>
@@ -102,12 +118,12 @@
         </tree>
       </field>
     </record>
-
+    <!--default_group_by="route_id"-->
     <record id="flt_kanban_view" model="ir.ui.view">
       <field name="name">sanergy.flt.kanban</field>
       <field name="model">sanergy.flt</field>
       <field name="arch" type="xml">
-        <kanban class="o_res_partner_kanban" default_group_by="route_id" store="True">
+        <kanban class="o_res_partner_kanban" store="True">
           <field name="id"/>
           <field name="name"/>
           <field name="category_id"/>
@@ -170,11 +186,16 @@
               <group string="Status" name="group_status">
                 <field name="current_status"/>
               </group>
+              <!--
+              <group string=" " name="group_writer">
+                <field name="write_uid"/>
+              </group>
+              -->
             </group>
             <notebook>
               <page name="status" string="Operational Status">
                 <field name="status_lines" mode="tree">
-                  <tree string="Status Lines" editable="bottom">
+                  <tree string="Status Lines">
                     <field name="status"/>
                     <field name="updated_type"/>
                     <field name="comment"/>
