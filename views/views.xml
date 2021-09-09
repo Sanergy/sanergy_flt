@@ -195,7 +195,7 @@
             <notebook>
               <page name="status" string="Operational Status">
                 <field name="status_lines" mode="tree">
-                  <tree string="Status Lines">
+                  <tree string="Status Lines" editable="bottom" create="false" delete="false">
                     <field name="status"/>
                     <field name="updated_type"/>
                     <field name="comment"/>

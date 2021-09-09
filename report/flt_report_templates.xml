@@ -11,6 +11,49 @@
                         <div t-field="o.date_opened"></div>
                         <div t-field="o.date_closed"></div>
                         <div t-field="o.current_status"></div>
+                        <!--
+                        <div class="row mt32 mb32" id="informations">
+                            <t t-foreach="o.status_lines" t-as="l">
+                                <div t-field="l.status"></div>
+                                <div t-field="l.updated_type"></div>
+                                <div t-field="l.comment"></div>
+                                <div t-field="l.create_date"></div>
+                                <div t-field="l.create_uid"></div>
+                            </t>
+                        </div>-->
+                        <table class="table table-sm o_main_table">
+                            <!-- In case we want to repeat the header, remove "display: table-row-group" -->
+                            <thead style="display: table-row-group">
+                                <tr>
+                                    <th name="th_status" class="text-left">Status</th>
+                                    <th name="th_type" class="text-right">Type</th>
+                                    <th name="th_comment" class="text-right">Comment</th>
+                                    <th name="th_date" class="text-right">Date</th>
+                                    <th name="th_user" class="text-right">User</th>
+                                </tr>
+                            </thead>
+                            <tbody class="status_tbody">
+                                <t t-foreach="o.status_lines" t-as="line">
+                                    <tr>
+                                        <td name="td_status">
+                                            <span t-field="line.status"/>
+                                        </td>
+                                        <td name="td_status">
+                                            <span t-field="line.updated_type"/>
+                                        </td>
+                                        <td name="td_status">
+                                            <span t-field="line.comment"/>
+                                        </td>
+                                        <td name="td_status">
+                                            <span t-field="line.create_date"/>
+                                        </td>
+                                        <td name="td_status">
+                                            <span t-field="line.create_uid"/>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
                     </t>
                 </t>
             </t>

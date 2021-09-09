@@ -38,7 +38,7 @@ class Flt(models.Model):
     date_opened = fields.Date('Date Opened')    
     date_closed = fields.Date('Date Closed', readonly=True)
     current_status = fields.Selection([('open', 'Open'), ('closed', 'Closed')], readonly=True, default='open', tracking=True)
-    status_lines = fields.One2many('sanergy.flt.status', 'flt_id', string='Status Lines', copy=True, auto_join=True)
+    status_lines = fields.One2many('sanergy.flt.status', 'flt_id', string='Status Lines', readonly=True, copy=True, auto_join=True)
 
     def action_close_flt(self):
         if self.current_status != 'open':
@@ -65,6 +65,11 @@ class Flt(models.Model):
             'date_opened': fields.Date.today(),
             'date_closed': None,
         })
+
+    @api.onchange('route_id')
+    def _onchange_route_id(self):
+        if self.route_id:
+            raise UserError("Moved to next stage...")
 
     class FltStatus(models.Model):
         _name = 'sanergy.flt.status'
