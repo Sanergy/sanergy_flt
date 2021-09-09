@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.rule" id="no_edit_in_closed_state">
+        <field name="name">No Edit in closed state</field>
+        <field name="model_id" ref="model_sanergy_flt"/>
+        <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+        <field eval="0" name="perm_unlink"/>
+        <field eval="0" name="perm_write"/>
+        <field eval="1" name="perm_read"/>
+        <field eval="0" name="perm_create"/>
+    </record>
+</odoo>
