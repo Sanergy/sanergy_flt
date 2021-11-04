@@ -36,7 +36,7 @@ Odoo prevents use of default postgres user so we need to setup the current user 
 
 ### Install virtualenvwrapper
 
-`pip3 install virtualenvwrapper`
+`sudo apt install python3-virtualenvwrapper`
 
 Documentation can be found [here](https://virtualenvwrapper.readthedocs.io/en/latest/)
 
